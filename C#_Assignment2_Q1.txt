@@ -1,0 +1,38 @@
+/*Circle is a class with property radius and methods setRadius(), getRadius(), calcDiameter(), calcArea().Use double precision for everything.
+    Write appropriate driver program to test the methods
+*/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace hwapp
+{
+    class Circle
+    {
+        public double radius { get; set; }
+        public double calcDiameter(double radius)
+        {
+            double diameter = (radius * radius);
+            return (double)diameter;
+        }
+        public double calArea(double radius)
+        {
+            double area = (int)(2 * 3.14* radius);
+            return (double)area;
+        }
+    }
+    class Calculate
+    {
+        public static void Main()
+        {
+            double rad;
+            Console.WriteLine("Enter the radius");
+            rad = double.Parse(Console.ReadLine());
+            Circle circle1 = new Circle();
+            Console.WriteLine("Diameter of the circle is "+circle1.calcDiameter(rad));
+            Console.WriteLine("Area of the circle is "+circle1.calArea(rad));
+        }
+    }
+}
