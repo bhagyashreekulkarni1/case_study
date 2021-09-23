@@ -1,0 +1,63 @@
+1. Create folder 'Test' in your home directory​
+mkdir Test
+
+2. Create below files​
+
+  - employeelist​
+touch employeelist​
+
+  - skillset​
+touch skillset
+​
+
+3. Create folder Test2 in home directory​
+mkdir test2
+
+  - create symbolink and hard link for skillset file ​
+
+ln skillset hardlink
+ln -s skillset symbolink
+
+  - delete skillset file and check if hardlink and symbolic link file exists​
+
+rm skillset
+hardlink exists and contents is shown  
+symbolic link exists but contents are not shown
+
+  - explain the difference b/n symbolic and hard links​
+
+hardlink exists and number of link is reduced to 1 and contents is shown  
+symbolic link exists but contents are not shown
+
+4. Provide read and write permission to 'user2' group​
+sudo chgrp user2 skillset
+chmod g+rw skillset
+
+   test if user2 group users can access the file​
+yes
+​
+
+5. Revoke write permission from user2 group and test the access again​
+chmod g-rw skillset
+No 
+
+6. Grant write permission for others and test it ​
+chmod o+w skillset
+Can access it
+
+7. Revoke write permission for others and test again​
+chmod o-w skillset
+cannot access it
+
+8. Change the group of employeelist file to 'user3'​
+sudo chgrp user3 employeelist
+
+   test if user3 group have access
+yes
+
+9. Change ownership of the file to user5 and test​
+sudo chown user5 employeelist
+user5 can access
+
+10. check how many employees are there  (hint: use wc command)​
+wc -l employeelist
