@@ -1,0 +1,31 @@
+Create file “File1”​
+cat >File1
+
+Append 2 more lines to the same file​
+cat >>File1
+
+Create File2 with few lines​
+cat >File2
+
+Display the contents of both File1 and File2​
+cat File1 
+cat File2
+
+Concatenate both File1 & 2​
+cat File1 File2
+
+Send the above output to File3​
+cat File1 File2 >File3
+
+Read File1,File2,File3… File5 . Observe the output​
+cat File1 File2 File3 File4 File5
+Displays the content of file 1 2 3 and error is shown as File 4 and 5 as no such file or directory
+
+Redirect the errors of the above command to “errorlog”​
+cat File1 File2 File3 File4 File5 2>errorlog
+
+Concatenate name File1 to 5 and store it in File 10. if any errors, log them in the same file ​
+cat File1 File2 File3 File4 File5 >File10 2>&1
+
+Copy File1 to File6. Add the errors to “errorlog”
+cp File1 File6 2>errorlog
